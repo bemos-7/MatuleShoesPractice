@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingRight="20dp"
+    android:paddingLeft="20dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_button"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="11dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="32sp"
+            android:text="OTP проверка"/>
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="Пожалуйста, проверьте свою электронную почту, чтобы увидеть код подтверждения"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="21sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="OTP Код"/>
+
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/digest_one"
+                android:layout_width="46dp"
+                android:layout_height="99dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:inputType="number"
+                android:maxLength="1"
+                android:background="@drawable/input_style_red"/>
+
+            <EditText
+                android:id="@+id/digest_two"
+                android:layout_width="46dp"
+                android:layout_height="99dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:inputType="number"
+                android:maxLength="1"
+                android:background="@drawable/input_style_red"/>
+
+            <EditText
+                android:id="@+id/digest_three"
+                android:layout_width="46dp"
+                android:layout_height="99dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:inputType="number"
+                android:textStyle="bold"
+                android:maxLength="1"
+                android:background="@drawable/input_style_red"/>
+
+            <EditText
+                android:id="@+id/digest_four"
+                android:layout_width="46dp"
+                android:layout_height="99dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:inputType="number"
+                android:maxLength="1"
+                android:background="@drawable/input_style_red"/>
+
+            <EditText
+                android:id="@+id/digest_five"
+                android:layout_width="46dp"
+                android:layout_height="99dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:inputType="number"
+                android:maxLength="1"
+                android:background="@drawable/input_style_red"/>
+
+            <EditText
+                android:id="@+id/digest_six"
+                android:layout_width="46dp"
+                android:layout_height="99dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:inputType="number"
+                android:maxLength="1"
+                android:background="@drawable/input_style_red"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/send_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style_blue"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:text="Отправить"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/resend_tv"
+                android:enabled="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Отправить заново"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="right"
+            android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/time_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    
+</LinearLayout>

@@ -11,6 +11,7 @@ import com.bemos.matuleshoes.databinding.SplashFragmentBinding
 import com.bemos.matuleshoes.screen.category.vm.CategoryViewModel
 import com.bemos.matuleshoes.screen.favorite.FavoriteFragment
 import com.bemos.matuleshoes.screen.home.HomeFragment
+import com.bemos.matuleshoes.screen.map.MapFragment
 import com.bemos.matuleshoes.screen.notification.NotificationFragment
 import com.bemos.matuleshoes.screen.onBoarding.OnBoardingFragment
 import com.bemos.matuleshoes.screen.profile.ProfileFragment

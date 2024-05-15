@@ -11,6 +11,8 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 //    val list: List<String> = listOf()
 //) : RecyclerView.Adapter<NotificationAdapter.ViewHolder>() {
 //
+//    var onItemClick = ((Notificaton) -> Unit)? = null
+//
 //    class ViewHolder(private val binding: ListitemBinding): RecyclerView.ViewHolder(binding.root) {
 //
 //        fun bind(item: String) {
@@ -37,6 +39,9 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 //        val item = list[position]
 //
 //        holder.bind(item)
+//        holder.binding.title.setOnClickListener {
+//          onItemClick?.invoke(item)
+//        }
 //    }
 //
 //}
@@ -53,6 +58,7 @@ class NotificationAdapter {
             binding.desc.text = item.description
             binding.time.text = item.time
         }
+
     }
 
     val adapter = ListDelegationAdapter(notificationDelegate)

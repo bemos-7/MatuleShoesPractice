@@ -3,13 +3,9 @@ package com.bemos.matuleshoes.screen.user.otp
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
@@ -18,24 +14,30 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.bemos.matuleshoes.App
-import com.bemos.matuleshoes.EmptyFragment
 import com.bemos.matuleshoes.R
 import com.bemos.matuleshoes.data.email.EmailManager
-import com.bemos.matuleshoes.databinding.ForgotPasswordFragmentBinding
 import com.bemos.matuleshoes.databinding.OtpVerificationFragmentBinding
-import com.bemos.matuleshoes.databinding.SignUpFragmentBinding
-import com.bemos.matuleshoes.screen.user.forgotPassword.ForgotPasswordFragment
-import com.bemos.matuleshoes.screen.user.forgotPassword.vm.ForgotPasswordViewModel
+import com.bemos.matuleshoes.screen.user.forgot_password.ForgotPasswordFragment
+import com.bemos.matuleshoes.screen.user.forgot_password.use_case.ForgotPasswordUseCase
+import com.bemos.matuleshoes.screen.user.forgot_password.vm.ForgotPasswordViewModel
+import com.bemos.matuleshoes.screen.user.otp.use_case.NewPasswordUseCase
+import com.bemos.matuleshoes.screen.user.otp.use_case.OtpVerificationUseCase
+import com.bemos.matuleshoes.screen.user.otp.use_cases.OtpUseCases
 import com.bemos.matuleshoes.screen.user.otp.vm.OtpVerificationViewModel
-import com.bemos.matuleshoes.screen.user.signIn.SignInFragment
+import com.bemos.matuleshoes.screen.user.sign_in.SignInFragment
 
 class OtpVerificationFragment : Fragment(R.layout.otp_verification_fragment) {
 
     private val binding: OtpVerificationFragmentBinding by viewBinding()
 
-    val otpVerificationViewModel = OtpVerificationViewModel(App.instance.baseAuthManager)
+    val otpVerificationViewModel = OtpVerificationViewModel(
+        OtpUseCases(
+        OtpVerificationUseCase(App.instance.baseAuthManager),
+        NewPasswordUseCase(App.instance.baseAuthManager)
+        )
+    )
 
-    val forgotPasswordViewModel = ForgotPasswordViewModel(App.instance.baseAuthManager)
+    val forgotPasswordViewModel = ForgotPasswordViewModel(ForgotPasswordUseCase(App.instance.baseAuthManager))
 
     lateinit var timer: CountDownTimer
 

@@ -1,8 +1,6 @@
 package com.bemos.matuleshoes.data.supabase.profile
 
-import android.net.Uri
 import com.bemos.matuleshoes.data.supabase.auth.Profile
-import com.bemos.matuleshoes.screen.user.forgotPassword.vm.ForgotPasswordViewModel
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.postgrest.from
 import io.github.jan.supabase.postgrest.postgrest

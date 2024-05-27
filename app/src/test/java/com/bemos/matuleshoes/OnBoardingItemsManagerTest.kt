@@ -1,7 +1,7 @@
 package com.bemos.matuleshoes
 
-import com.bemos.matuleshoes.screen.onBoarding.Item
-import com.bemos.matuleshoes.screen.onBoarding.OnBoardingItemsManager
+import com.bemos.matuleshoes.screen.on_boarding.Item
+import com.bemos.matuleshoes.screen.on_boarding.OnBoardingItemsManager
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test

@@ -3,12 +3,13 @@ package com.bemos.matuleshoes.screen.user.otp.vm
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bemos.matuleshoes.data.supabase.auth.BaseAuthManager
+import com.bemos.matuleshoes.screen.user.otp.use_cases.OtpUseCases
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class OtpVerificationViewModel(
-    private val baseAuthManager: BaseAuthManager
+    private val otpUseCases: OtpUseCases
 ): ViewModel() {
 
     val stateError = MutableLiveData<String>()
@@ -19,15 +20,15 @@ class OtpVerificationViewModel(
         token: String,
         email: String,
     ) {
-        try {
-            scope.launch {
-                baseAuthManager.confirmOtp(
+        scope.launch {
+            try {
+                otpUseCases.otpVerificationUseCase.invoke(
                     token,
                     email
                 )
+            } catch (e: Exception) {
+                stateError.postValue(e.message)
             }
-        } catch (e: Exception) {
-            stateError.value = e.message
         }
     }
 
@@ -35,15 +36,15 @@ class OtpVerificationViewModel(
         email: String,
         password: String
     ) {
-        try {
-            scope.launch {
-                baseAuthManager.newPassword(
+        scope.launch {
+            try {
+                otpUseCases.newPasswordUseCase.invoke(
                     email,
                     password
                 )
+            } catch (e: Exception) {
+                stateError.postValue(e.message)
             }
-        } catch (e: Exception) {
-            stateError.value = e.message
         }
     }
 

@@ -2,9 +2,7 @@ package com.bemos.matuleshoes.screen.home
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -13,15 +11,18 @@ import com.bemos.matuleshoes.MainActivity
 import com.bemos.matuleshoes.R
 import com.bemos.matuleshoes.data.email.EmailManager
 import com.bemos.matuleshoes.data.email.MainActivityViewModel
-import com.bemos.matuleshoes.data.idManager.IdManager
+import com.bemos.matuleshoes.data.id_manager.IdManager
 import com.bemos.matuleshoes.databinding.HomeFragmentBinding
-import com.bemos.matuleshoes.databinding.SignInFragmentBinding
 import com.bemos.matuleshoes.screen.category.CategoryFragment
 import com.bemos.matuleshoes.screen.category.vm.CategoryViewModel
 import com.bemos.matuleshoes.screen.category.vm.Item
+import com.bemos.matuleshoes.screen.favorite.vm.dataCase.FavoriteUseCases
+import com.bemos.matuleshoes.screen.favorite.vm.use_cases.DeleteFavoriteUseCase
+import com.bemos.matuleshoes.screen.favorite.vm.use_cases.PutFavoriteUseCase
 import com.bemos.matuleshoes.screen.home.vm.HomeSecondViewModel
 import com.bemos.matuleshoes.screen.home.vm.HomeViewModel
-import com.bemos.matuleshoes.screen.sideMenu.SideMenuFragment
+import com.bemos.matuleshoes.screen.profile_screen.use_case.ProfileUseCase
+import com.bemos.matuleshoes.screen.side_menu.SideMenuFragment
 
 class HomeFragment : Fragment(R.layout.home_fragment) {
 
@@ -31,8 +32,13 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
 
     lateinit var mainActivityViewModel: MainActivityViewModel
 
-    val homeViewModel = HomeViewModel(App.instance.baseFavoriteManager)
-    val homeSecondViewModel = HomeSecondViewModel(App.instance.baseProfileManager)
+    val homeViewModel = HomeViewModel(
+        FavoriteUseCases(
+            PutFavoriteUseCase(App.instance.baseFavoriteManager),
+            DeleteFavoriteUseCase(App.instance.baseFavoriteManager)
+        )
+    )
+    val homeSecondViewModel = HomeSecondViewModel(ProfileUseCase(App.instance.baseProfileManager))
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(binding) {

@@ -5,20 +5,15 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.bemos.matuleshoes.data.email.EmailManager
 import com.bemos.matuleshoes.data.email.MainActivityViewModel
-import com.bemos.matuleshoes.data.idManager.IdManager
+import com.bemos.matuleshoes.data.id_manager.IdManager
 import com.bemos.matuleshoes.databinding.ActivityMainBinding
-import com.bemos.matuleshoes.databinding.SplashFragmentBinding
 import com.bemos.matuleshoes.screen.category.vm.CategoryViewModel
 import com.bemos.matuleshoes.screen.favorite.FavoriteFragment
 import com.bemos.matuleshoes.screen.home.HomeFragment
-import com.bemos.matuleshoes.screen.map.MapFragment
 import com.bemos.matuleshoes.screen.notification.NotificationFragment
-import com.bemos.matuleshoes.screen.onBoarding.OnBoardingFragment
-import com.bemos.matuleshoes.screen.profile.ProfileFragment
-import com.bemos.matuleshoes.screen.sideMenu.SideMenuFragment
+import com.bemos.matuleshoes.screen.profile_screen.profile.ProfileFragment
 import com.bemos.matuleshoes.screen.splash.SplashFragment
-import com.bemos.matuleshoes.screen.user.forgotPassword.ForgotPasswordFragment
-import com.bemos.matuleshoes.screen.user.otp.OtpVerificationFragment
+import com.bemos.matuleshoes.screen.user.sign_up.SignUpFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -57,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.frame_container, SplashFragment())
+            .replace(R.id.frame_container, SignUpFragment())
             .commit()
     }
 }

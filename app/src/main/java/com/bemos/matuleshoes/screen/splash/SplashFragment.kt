@@ -3,19 +3,14 @@ package com.bemos.matuleshoes.screen.splash
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Patterns
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.bemos.matuleshoes.EmptyFragment
 import com.bemos.matuleshoes.R
 import com.bemos.matuleshoes.data.email.EmailManager
-import com.bemos.matuleshoes.databinding.SignUpFragmentBinding
 import com.bemos.matuleshoes.databinding.SplashFragmentBinding
 import com.bemos.matuleshoes.screen.home.HomeFragment
-import com.bemos.matuleshoes.screen.onBoarding.OnBoardingFragment
-import kotlin.reflect.jvm.internal.impl.resolve.scopes.MemberScope.Empty
+import com.bemos.matuleshoes.screen.on_boarding.OnBoardingFragment
 
 class SplashFragment : Fragment(R.layout.splash_fragment) {
 

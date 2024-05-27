@@ -2,7 +2,7 @@ package com.bemos.matuleshoes.data.email
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.bemos.matuleshoes.data.idManager.IdManager
+import com.bemos.matuleshoes.data.id_manager.IdManager
 
 class MainActivityViewModel(
     private val emailManager: EmailManager,
